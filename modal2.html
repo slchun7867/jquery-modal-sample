@@ -1,0 +1,43 @@
+<div id="test_page2">
+    <style>
+        #test_page2 p {
+            width: 400px;
+        }
+    </style>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint nisi voluptatem iusto beatae sequi ex quam tempora
+        laboriosam facere, facilis nulla nostrum impedit ducimus, porro quasi quos, itaque optio corporis.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint nisi voluptatem iusto beatae sequi ex quam tempora
+        laboriosam facere, facilis nulla nostrum impedit ducimus, porro quasi quos, itaque optio corporis.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint nisi voluptatem iusto beatae sequi ex quam tempora
+        laboriosam facere, facilis nulla nostrum impedit ducimus, porro quasi quos, itaque optio corporis.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint nisi voluptatem iusto beatae sequi ex quam tempora
+        laboriosam facere, facilis nulla nostrum impedit ducimus, porro quasi quos, itaque optio corporis.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint nisi voluptatem iusto beatae sequi ex quam tempora
+        laboriosam facere, facilis nulla nostrum impedit ducimus, porro quasi quos, itaque optio corporis.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint nisi voluptatem iusto beatae sequi ex quam tempora
+        laboriosam facere, facilis nulla nostrum impedit ducimus, porro quasi quos, itaque optio corporis.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint nisi voluptatem iusto beatae sequi ex quam tempora
+        laboriosam facere, facilis nulla nostrum impedit ducimus, porro quasi quos, itaque optio corporis.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint nisi voluptatem iusto beatae sequi ex quam tempora
+        laboriosam facere, facilis nulla nostrum impedit ducimus, porro quasi quos, itaque optio corporis.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint nisi voluptatem iusto beatae sequi ex quam tempora
+        laboriosam facere, facilis nulla nostrum impedit ducimus, porro quasi quos, itaque optio corporis.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint nisi voluptatem iusto beatae sequi ex quam tempora
+        laboriosam facere, facilis nulla nostrum impedit ducimus, porro quasi quos, itaque optio corporis.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint nisi voluptatem iusto beatae sequi ex quam tempora
+        laboriosam facere, facilis nulla nostrum impedit ducimus, porro quasi quos, itaque optio corporis.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint nisi voluptatem iusto beatae sequi ex quam tempora
+        laboriosam facere, facilis nulla nostrum impedit ducimus, porro quasi quos, itaque optio corporis.</p>
+
+    <div class="text-center">
+        <button id="close_btn" type="button" class="btn btn-danger btn-lg">닫기</button>
+    </div>
+    
+    <script>
+        var base = $("#test_page2").parents(".modal_popup");
+
+        $("#close_btn", base).on("click", function(){
+            $.modal.getCurrent().close({x:"x22"});
+        });
+    </script>
+</div>

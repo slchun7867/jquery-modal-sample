@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="js/jquery.modal.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/jquery.modal.css" />
+</head>
+
+<body>
+    <button id="manual-ajax"" type="button" class="btn btn-primary btn-lg">팝업</button>
+
+    <script>
+        $('#manual-ajax').click(function (event) {
+            event.preventDefault();
+            this.blur();
+
+            $.popup({
+                url : 'modal1.html',
+                close : function(result){
+                    console.log(result);
+                }
+            });
+        });
+
+        (function($) {
+            $.popup = function(opt) {
+                $.ajax({
+                    url : opt.url,
+                    data : opt.data,
+                    dataType : 'html',
+                    success : function(html) {
+                        $(`<div class='modal_popup'>${html}</div>`)
+                            .appendTo('body')
+                            .modal({
+                                escapeClose: false,
+                                clickClose: false,
+                                closeExisting: false
+                            })
+                            .addClass("animated jackInTheBox faster")
+                            .on($.modal.CLOSE, function(event, modal) {
+                                if( opt.close ) opt.close(modal.result);
+
+                                modal.elm.remove();
+                            });
+                    },
+                    error: function(res) {
+                        if (opt.error) opt.error(res.responseText);
+                        else {
+                            alert("error");
+                        }
+                        throw "popup_error";
+                    }
+                });
+            }
+        })(jQuery);
+    </script>
+</body>
+
+</html>
