@@ -12,7 +12,7 @@
                         clickClose: false,
                         closeExisting: false
                     })
-                    .addClass("animated jackInTheBox faster")
+                    .addClass("animated faster").addClass(opt.animation || "jackInTheBox")
                     .on($.modal.CLOSE, function (event, modal) {
                         if (opt.close) opt.close(modal.result);
 
